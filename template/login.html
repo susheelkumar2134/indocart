@@ -1,0 +1,49 @@
+{% load static %}
+{% include 'header.html' %}
+<head >
+  <title>indo</title>
+  <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <style>
+        *{  margin: 0px; 
+            padding: 0px; 
+            box-sizing: border-box;}
+    </style>
+</head>
+<body >
+    <br>
+    <center><span id="message" style="margin-top:20px">{{success}}  {{error}}</span></center>
+    {% comment %} LOGIN FORM START  {% endcomment %}
+<center>
+   
+    <div class="base-div row mt-5 mb-5">
+        <div class="left-div col-lg-6 col-md-6 pt-4 pb-5">
+           
+            <form name="login" method="post">
+                {% csrf_token %}
+            <h1 >Login</h1>
+            <span>
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-twitter"></i>
+            </span>
+            <p  style="font-weight: 500;">or use account</p>
+            <input type="email"  name="email" placeholder="Enter Email" class="email" width="70%" style="margin-bottom: 10px; padding-left:10px;" >
+            <br>
+            <input type="password" name="password" placeholder="Enter Password" class="password" style="margin-bottom: 5px; padding-left:10px;">
+            <br>
+            <span style="font-weight: 500; ">Forget your password?</span>
+            <br>
+            <span class="mt-2">
+            <a href="registration.html" >Register Now </a>
+            </span>
+            <br>
+            <br>
+            <button type="submit" class="bt1" style="color:black; width: 70px;; background-color:#ff8000ad; font-weight:bold;  border:px solid black ; border-radius:4px; cursor:pointer ">Login</button>
+            </form>
+        </div>
+        <div class="right-div col-lg-6 col-md-6"> 
+            <img src="{% static 'Images/logo7.png' %}"  class="mt-5 pt-5">
+        </div>
+    </div>
+</center>
+     {% comment %} LOGIN FORM END  {% endcomment %}
+    {% include "footer.html" %}

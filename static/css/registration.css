@@ -1,0 +1,93 @@
+*
+{ 
+ margin: 0px; 
+ padding: 0px; 
+ box-sizing: border-box;
+}
+.reg{
+    font-family: 'Itim', cursive;
+    font-size: 20px;
+    font-size: 5vh;
+}
+/* .base-div{
+    
+    width: 70%;
+    border-radius: 10px;
+} */
+.one{
+    width: 100%;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+}
+.left-div{
+    background-color: white;
+   border-bottom-left-radius: 50px;
+   
+   border-top-right-radius: 50px;
+    background-image: url(https://t4.ftcdn.net/jpg/05/09/65/89/360_F_509658937_tCDo91VcStdLcnhzriHhj70Q8fXJVjwf.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 5px 5px 10px;
+    width: 50%;
+    padding: 2%;
+    /* position: relative ;
+    left: 20px ;
+    z-index: 2; */
+
+
+}
+
+
+
+.f-name{
+    border-color:orange;
+    border-radius: 10px;
+    border-width: 2px;
+}
+.l-name{
+    border-color:orange;
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+
+.email{
+    border-color:orange;
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+.r-email{
+    border-color:orange;
+    border-radius: 10px;
+    border-width: 2px;
+}
+.password{
+    border-color:orange;
+    border-radius: 10px;
+    border-width: 2px;
+}
+.r-password{
+    border-color:orange;
+    border-radius: 10px;
+    border-width: 2px;
+}
+.reg-img{
+    margin-top: 35%;
+}
+
+@media screen and (max-width: 800px){
+
+    .left-div{
+        width: 75%;
+        padding: 2%;
+        /* position: relative ;
+        left: 20px ;
+        z-index: 2; */
+    
+    
+    }
+
+}
+

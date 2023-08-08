@@ -1,0 +1,26 @@
+{% load static %}
+{% include 'header.html' %}
+<head >
+  <title>indo</title>
+  <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+</head>
+    <!-- FORM START -->
+      {% comment %} <center> {% endcomment %}
+        <center>
+        <div class="base-div  mt-5 mb-5">
+         <form method="post" class="left-div" >
+          {% csrf_token %}
+          <b>
+            <p style="margin-bottom: 5 px;" class="reg">Registration Form</p>
+           {{registrationform.as_table}}
+           {{error}}<br>
+          <input type="checkbox" required> I have agree to the terms and conditions.
+          <br></b>
+          <button type="submit" class="bt1" style="color:black; width: 70px;; background-color:#ff8000ad; font-weight:bold;  border:px solid black ; border-radius:4px; cursor:pointer ">Submit</button>
+          <button type="reset" class="bt2" style="color:black; width: 70px;; background-color:#ff8000ad; font-weight:bold;  border:px solid black ; border-radius:4px; cursor:pointer ">Reset</button>
+        </form>
+      </div>
+  </center>
+    <!-- FORM END -->
+   {% include "footer.html" %}
+

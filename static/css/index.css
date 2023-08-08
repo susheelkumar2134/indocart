@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    width: 10px;
+    height: auto;
+    background-color: white;
+
+}
+::-webkit-scrollbar-thumb{
+    background-color:#ff8000ad ;
+    border-radius: 20px;
+    border: 3px solid white;
+    background-clip: content-box;
+}
+
+#img2{
+    display: none;
+}
+.search-bar2{
+    display: none;
+    
+
+    
+}
+.search-bar{
+    display: flex;
+    border: 2px solid black; 
+    border-radius: 10px;  
+    height: 2.5rem;
+}
+.wish:hover{
+    font-weight: bold;
+    color: #ff8000ad;
+    /* animation: dhadak 1s ease 0s 1 normal forwards;
+    animation-iteration-count: 2; */
+    
+}
+/* 
+@keyframes dhadak {
+	0% {
+		transform: scale(1.5);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+} */
+.cart:hover{
+    font-weight: bold;
+    color: #ff8000ad;
+    /* animation: cart 1s ease 0s 1 normal forwards;
+    animation-iteration-count: 2; */
+}
+/* @keyframes cart {
+	0% {
+		transform: scale(1.5);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+} */
+.search-icon{
+    font-size: 1.3em;
+    padding: 0.4em;
+    
+}
+.wish,.cart{
+    font-size: 19px;
+}
+
+/* .search-icon:hover{
+    font-size: 1.6em;
+    padding: 0.4em;
+    animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+} */
+.user-services a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+.user-services li{
+    padding: 5px 10px 5px 10px;  
+    cursor: pointer;
+}
+.user-services li:hover{
+    background-color: white;
+}
+.user-services li i{
+    margin-right: 8px;
+}
+.user-services{
+    display: none;
+    background-color: rgb(236, 231, 224);
+    box-shadow: 1px 1px 2px rgb(117, 112, 112);
+    border-radius: 4px;
+    text-decoration: none;
+    position:absolute;
+    list-style: none;
+    font-weight: bold;
+    width: 11rem;
+    z-index: 10;
+    padding: 0px;
+}
+.open-services:hover> .user-services{
+    display: block;
+}
+center a{
+    
+    color: black;
+    
+}
+center a:hover{
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+center a p{
+    padding-top: 4px;
+}
+
+
+nav li a:hover{
+    color: blueviolet;
+
+}
+.nav-item2{
+    font-size: 13px;
+    font-weight: bold;
+}
+.height-2 {
+    height: 45vh;
+}
+
+.company{
+    list-style: none;
+}
+.company li a{
+    text-decoration: none;
+    color: rgb(53, 49, 49);
+    font-weight: bold;
+}
+.company li a:hover{
+   font-size: 1.4rem;
+}
+span i:hover{
+ font-size: 1.4rem;
+ 
+}
+.line{
+    border: 2px solid black;
+    background-color: black;
+    width: 90%;
+    border-radius: 5px;
+
+}
+.t-c{
+    position: relative;
+    top: -28px;
+}
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background-color: white;
+    box-shadow: 2px 2px 8px black;
+    
+}
+.all-pro{
+    display: none;
+    
+}
+
+@media screen and (max-width: 600px) {
+    #img1{
+        display: none;
+    }
+   #img2{
+    display: flex;
+     height: 5rem;
+
+   }
+}
+
+
+@media screen and (max-width: 1310px) {
+    .nav-item2{
+        font-size: 12px;
+    }
+    .wish,.cart{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1288px) {
+    .nav-item2{
+        font-size: 11px;
+    }
+    .wish,.cart{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .search-bar{
+        display: none;
+        
+    }
+    .search-bar2{
+        display: flex;
+        border: 2px solid #1475c5; 
+        border-radius: 10px;  
+    }
+    .ul-padding{
+        padding: 0.5rem;
+    }
+    .nav-item2{
+        font-size: 14px;
+    }
+    .wish,.cart{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 575px){
+    .all-pro1{
+        display: none;
+    }
+    .all-pro{
+        display: flex;
+        overflow: scroll;
+        scroll-behavior:unset;
+    }
+
+}

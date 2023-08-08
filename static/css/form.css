@@ -1,0 +1,91 @@
+*
+{ 
+ margin: 0px; 
+ padding: 0px; 
+ box-sizing: border-box;
+}
+.base-div{
+    
+    width: 70%;
+    background-color: rgb(228, 211, 245);
+    border-radius: 10px;
+    
+    
+}
+#message{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2%;
+}
+.left-div{
+    background-color: white;
+    border-radius: 10px;
+    /* background-color: rgb(201, 245, 247); */
+    background-image: url(https://t4.ftcdn.net/jpg/05/09/65/89/360_F_509658937_tCDo91VcStdLcnhzriHhj70Q8fXJVjwf.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 5px 5px 10px;
+    animation: left 2s ease 0s 1 normal forwards;
+}
+@keyframes left {
+	0% {
+		opacity: 0;
+		transform: rotateX(-100deg);
+		transform-origin: top;
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateX(0deg);
+		transform-origin: top;
+	}
+}
+.right-div{
+    /* border-radius: 10px; */
+   /* background-color:transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 5px 5px 10px; */
+    animation: right 2s ease 0s 1 normal forwards;
+
+}
+@keyframes right {
+	0% {
+		opacity: 0;
+		transform: rotateX(100deg);
+		transform-origin: bottom;
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateX(0);
+		transform-origin: bottom;
+	}
+}
+h1{
+    font-size: 7vh;
+}
+
+
+.email{
+    border-color:orange;
+    border-radius: 10px;
+    border-width: 2px;
+}
+.password{
+    border-color:orange;
+    border-radius: 10px;
+    border-width: 2px;
+}
+.bt1{
+   
+    border-color: orange;
+    
+}
+
+@media screen and (max-width: 1141px){
+.right-div{
+    display: none;
+}
+
+}
