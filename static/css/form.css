@@ -12,6 +12,10 @@
     
     
 }
+.hov:hover{
+    background-color: rgba(243, 233, 233, 0.562);
+    border-radius: 10px;
+}
 #message{
     font-weight: bold;
     text-align: center;

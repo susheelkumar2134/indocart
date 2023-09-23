@@ -9,7 +9,32 @@
             box-sizing: border-box;}
     </style>
 </head>
-<body >
+{% comment %}  Search_products list Start {% endcomment %}
+{% if search_products %}
+
+<div width="100%">
+    <h2 class="mt-4"><center>Result</center></h2>
+<div class="row" >
+{% for product in search_products %}
+  <div class="col-lg-3 col-md-3 col-sm-4 hov p-4 mb-5">
+    <center>
+      <a href="{% url 'productdetail' product.id %}" class=''>
+       <img src="{{product.ProductImage.url}}" height="100vh" alt='products' />
+        <p class="">{{product.ProductName}}</p>
+        <h3 style="display:inline;">Rs <h4 style="display:inline;"> {{product.ProductPrice}}</h4></h3>
+        <button class="btn btn-primary mt-3" style="display:block;">Buy Now</button>
+      </a>
+    </center>
+  </div>
+ {% endfor %}
+</div>
+</div>
+
+{% else %}
+
+
+{% comment %}  Search_products list End {% endcomment %}
+
     <br>
     <center><span id="message" style="margin-top:20px">{{success}}  {{error}}</span></center>
     {% comment %} LOGIN FORM START  {% endcomment %}
@@ -18,7 +43,8 @@
     <div class="base-div row mt-5 mb-5">
         <div class="left-div col-lg-6 col-md-6 pt-4 pb-5">
            
-            <form name="login" method="post">
+            <form  method="post" name="login">
+            
                 {% csrf_token %}
             <h1 >Login</h1>
             <span>
@@ -33,17 +59,21 @@
             <span style="font-weight: 500; ">Forget your password?</span>
             <br>
             <span class="mt-2">
-            <a href="registration.html" >Register Now </a>
             </span>
             <br>
             <br>
             <button type="submit" class="bt1" style="color:black; width: 70px;; background-color:#ff8000ad; font-weight:bold;  border:px solid black ; border-radius:4px; cursor:pointer ">Login</button>
-            </form>
+        </form>
         </div>
         <div class="right-div col-lg-6 col-md-6"> 
             <img src="{% static 'Images/logo7.png' %}"  class="mt-5 pt-5">
         </div>
     </div>
 </center>
+{% endif %}
      {% comment %} LOGIN FORM END  {% endcomment %}
+     <script src="{% static 'js/index.js' %}"></script>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/ulg/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     {% include "footer.html" %}

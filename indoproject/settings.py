@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'indoapp',
+    'indoapp2',
 ]
 
 MIDDLEWARE = [
@@ -138,7 +138,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT=BASE_DIR /"media"
-
 MEDIA_URL="/media/"
 
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
@@ -146,4 +145,5 @@ EMAIL_HOST='smtp.gmail.com'
 EMAIL_USE_TLS=True
 EMAIL_PORT=587
 EMAIL_HOST_USER='indocart60@gmail.com'
-EMAIL_HOST_PASSWORD='xsadlyadhorrzxtt'
+EMAIL_HOST_PASSWORD='yjxhilrfhqkuotvn'
+

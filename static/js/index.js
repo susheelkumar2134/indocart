@@ -1,8 +1,20 @@
 // var coll=document.getElementById('nav-1');
 //     coll.style.display='none';
 
-// var cross=document.getElementsByClassName('cross');
-
+// // var cross=document.getElementsByClassName('cross');
+// $(document).ready(function () {
+//     $(".plus-cart").click(function () {
+//         $.ajax({
+//             url: "/cart_quan",  // URL to the Django view
+//             type: "GET",
+//             dataType: "json",
+//             success: ()=>{
+//               console.log("works")
+//               console.log(data.name);
+//             }
+//         });
+//     });
+// });
 
 
 

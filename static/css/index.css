@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 *{
     box-sizing: border-box;
 }
@@ -17,8 +17,54 @@
     border-radius: 20px;
     border: 3px solid white;
     background-clip: content-box;
-}
 
+}
+.cardss{
+    border: 1px dashed #96afc4;
+    border-radius: 5px;
+    padding: 3%;
+    margin-top: 10px;
+    background-color: #f1fbfce3;
+}
+.main-cardss{
+    border: 1px solid #96afc4;
+    border-radius: 5px;
+    padding: 1%;
+    background-color: #f7eff89c;
+    font-family: 'Nunito', sans-serif;
+}
+.main-cardsss{
+    border: 1px solid #96afc4;
+    border-radius: 5px;
+    padding: 1%;
+    background-color: #f7eff89c;
+    font-family: 'Nunito', sans-serif;
+}
+.roow{
+    justify-content:space-evenly;
+
+}
+.ok{
+    background-color: rgba(235, 232, 228, 0.705);
+}
+.co{
+    background-color: rgba(162, 240, 216, 0.863);
+    color: rgba(241, 98, 153, 0.76);
+    font-weight: bold;
+}
+.select{
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+.row{
+    width: 100%;
+}
+.hov:hover{
+    background-color: rgba(243, 233, 233, 0.562);
+    border-radius: 10px;
+}
 #img2{
     display: none;
 }

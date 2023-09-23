@@ -1,82 +1,158 @@
 {% load static %}
 {% include 'header.html' %}
 <head >
-  <title>indo</title>
+  {% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> {% endcomment %}
+
+<title>indo</title>
     <link rel="stylesheet" href="{% static 'Css/cart.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
   </head>
+
   <body>
+{% comment %}  Search_products list Start {% endcomment %}
+{% if search_products %}
+
+<div width="100%">
+    <h2 class="mt-4"><center>Result</center></h2>
+<div class="row" >
+{% for product in search_products %}
+  <div class="col-lg-3 col-md-3 col-sm-4 hov p-4 mb-5">
+    <center>
+      <a href="{% url 'productdetail' product.id %}" class=''>
+       <img src="{{product.ProductImage.url}}" height="100vh" alt='products' />
+        <p class="">{{product.ProductName}}</p>
+        <h3 style="display:inline;">Rs <h4 style="display:inline;"> {{product.ProductPrice}}</h4></h3>
+        <button class="btn btn-primary mt-3" style="display:block;">Buy Now</button>
+      </a>
+    </center>
+  </div>
+ {% endfor %}
+</div>
+</div>
+
+{% else %}
+
+
+{% comment %}  Search_products list End {% endcomment %}
+  
     <!--cart items detail start-->
-    <div class="container cart-page">
+    {% comment %} <div width="100%" class="container cart-page" style="display:flex;">
       <table>
         <tr> 
           <th>Product</th>
           <th>Quantity</th>
+        </tr>
+        <tr>
           <th>Subtotal</th>
         </tr>
+      </table>
+    <div  width="70%">
+      <table>
+        
+        {% for product in cart_products  %}
         <tr>
           <td>
             <div class="cart-info">
-              <img src="./Image/mobile.jpeg">
+              <img src="{{product.ProductImage.url}}">
               <div>
-                <p>Xiaomi 11i</p>
-                <small>$50</small><br>
-                <a href="">Remove</a>
+                <p>{{product.ProductName}}</p>
+                <small >Rs {{product.ProductPrice}}</small><br>
+                <a href="" >Remove</a>
               </div>
-
             </div>
           </td>
-          <td><input type="number" value="1"></td>
-          <td>$50.00</td>
+          <td><input type="number" id="numb" onclick="getval()" value="1"></td>
         </tr>
-        <tr>
-          <td>
-            <div class="cart-info">
-              <img src="./Image/earpods.jpeg">
-              <div>
-                <p>Realme buds neo</p>
-                <small>$20</small><br>
-                <a href="">Remove</a>
-              </div>
-
-            </div>
-          </td>
-          <td><input type="number" value="1"></td>
-          <td>$50.00</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="cart-info">
-              <img src="./Image/mouse.jpeg">
-              <div>
-                <p>HP Optical mouse</p>
-                <small>$50</small><br>
-                <a href="">Remove</a>
-              </div>
-
-            </div>
-          </td>
-          <td><input type="number" value="1"></td>
-          <td>$50.00</td>
-        </tr>
+        {% endfor %}
       </table>
     </div>
-    <div class="container total-price">
+    <div width="30%">
+      <table>
+        {% for tem in tem_amount %}
+        <tr>
+          <td>Rs {{tem}}</td>
+        </tr>
+        {% endfor %} 
+      </table>
+    </div>
+  </div> {% endcomment %}
+{% if cart_products %}
+
+
+
+  <div class="container px-5">
+  <div class="main" style="margin-top:7vh;">
+    <div class="left px-5">
+      <table width="100%">
+        <tr class="px-5">
+          <th>Product Name</th>
+          <th>Product Quantity</th>
+          <th id="tab">
+            Product Price
+          </th>
+        </tr>
+        {% for pro in cart_products  %}
+        <tr class="hh" pipi="{{pro.id}}">
+          <td>
+            <div class="cart-info">
+              <img src="{{pro.ProductImage.url}}">
+              <div>
+                <p>{{pro.ProductName}}<br>
+                  <span  class="remove" pidi="{{pro.id}}">Remove</span>
+                    {% comment %} <a href="" class="remove" pidi="{{pro.id}}">Remove</a> {% endcomment %}
+                </p>
+              </div>
+            </div>
+          </td>
+          <td style="margin-left:30%"><input type="number"  name="prod" class="plus-cart products" pip="{{pro.id}}" pid="{{pro.product}}" id="{{pro.product}}" min="1" max="5" onclick="getval()" value="{{pro.quantity}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            X</td> 
+          <td>
+            {{pro.ProductPrice}}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+{% comment %} <input type="submit" name="submit"> {% endcomment %}
+
+<div class="container px-5 mt-4" >
+    <div class="container total-price pr-5" >
       <table>
         <tr>
           <td>Subtotal</td>
-          <td>$200</td>
+          <td id="amount">Rs {{amount}}</td>
         </tr>
         <tr>
-          <td>Tax</td>
-          <td>$35</td>
+          <td>Delivery fee</td>
+          <td>Rs 40</td>
         </tr>
         <tr>
           <td>Total</td>
-          <td>$230</td>
+          <td id="total">Rs {{totalamount}}</td>
+        </tr>
+        <tr>
+          <td><a href="{% url "placeorder" %}" style="color:white; text-decoration: none;"><button class="order" >Place order</button></a></td>
         </tr>
       </table>
     </div>
-    
+  </div>
+  {% else %}
+  <center>
+  <img src="{% static "Images/empty.png" %}" class="my-5" width="50%"  height="400px">
+  </center>
+  {% endif %}
     <!-- cart items detail end-->
+{% endif %}
+</body>
+{% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> {% endcomment %}
+
+
+{% comment %} <script src="{% static 'js/index.js' %}"></script> {% endcomment %}
+
+<script src="{% static 'js/cart.js' %}"></script>
 
    {% include "footer.html" %}
