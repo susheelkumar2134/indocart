@@ -81,7 +81,6 @@ def registration(request):
              if Form.is_valid:
                 try:
                     Form.save()
-                    Success=" You are register succesfully. Now you can login here with your Email and Password. "
                     RegistrationSendEmailHTML(Email)
                     return redirect('login')
                 except:
