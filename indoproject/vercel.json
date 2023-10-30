@@ -1,18 +1,17 @@
 {"version": 2,
 
 "builds": [{
-"src": "indoproject/wsgi.py",
+"src": "indoproject/indoproject/wsgi.py",
 "use": "@vercel/python",
  "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-},
-{
+},{
 "src": "build_files.sh",
 
 "use": "@vercel/static-build",
 
 "config": {
 
-"distDir": "staticfiles_build"}}
+"distDir": "static"}}
 ],
 
 "routes": [
